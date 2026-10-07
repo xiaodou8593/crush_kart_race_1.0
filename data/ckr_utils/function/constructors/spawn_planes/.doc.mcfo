@@ -1,0 +1,9 @@
+#ckr_utils:constructors/spawn_planes/doc.mcfo
+
+# spawn_planes临时对象
+_this:{
+	progress:<vp_progress,int>,
+	list_planes:[storage ckr_utils:io list_planes],
+	planes_cnt:<planes_cnt,int,1>,
+	field_center:[storage vp_core:io field_center,ListDouble,3]
+}

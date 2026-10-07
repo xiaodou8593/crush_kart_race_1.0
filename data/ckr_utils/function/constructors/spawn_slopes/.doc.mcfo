@@ -1,0 +1,9 @@
+#ckr_utils:constructors/spawn_slopes/doc.mcfo
+
+# spawn_slopes临时对象
+_this:{
+	progress:<vp_progress,int>,
+	list_slopes:[storage ckr_utils:io list_slopes,ListCompound],
+	slopes_cnt:<slopes_cnt,int,1>,
+	field_center:[storage vp_core:io field_center,ListDouble,3]
+}

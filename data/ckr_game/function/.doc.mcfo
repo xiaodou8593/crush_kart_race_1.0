@@ -1,0 +1,15 @@
+#ckr_game:doc.mcfo
+
+# ckr_game临时对象
+_this:{
+	game_namespace:[storage vp_core:io game_namespace,String],
+	game_prefix:[storage vp_core:io game_prefix,String],
+	game_name:[storage vp_core:io game_name,Compound],
+	game_desc:[storage vp_core:io game_desc,ListCompound],
+	game_display:[storage vp_core:io game_display,Compound],
+	version_range:[storage vp_core:io version_range,ListInt,2],
+	game_state:[storage vp_core:io game_state,String],
+	field_size:[storage vp_core:io field_size,Int],
+	field_height:[storage vp_core:io field_height,Int],
+	field_center:[storage vp_core:io field_center,ListDouble,3]
+}
