@@ -22,9 +22,11 @@ execute if score shift_cnt int matches 1.. run tag @s add vve_surface
 execute if score shift_cnt int matches 3.. run scoreboard players set surface int 1
 execute if score surface int matches 1 as 0-0-0-0-0 run function vve:vehicle/_regular
 execute if score surface int matches 0 if score shift_cnt int matches 0 if score grab_layer_response int matches 3.. if score grab_layer_receiver_v_norm int < grab_layer_regular_v int as 0-0-0-0-0 run function vve:object/_regular
+# 飞行姿态控制
+execute if entity @s[tag=ckr_gliding] on passengers if entity @s[type=minecraft:item_display] run function ckr_gliders:default/main
 function vve:object/_apply_friction
 # 按键控制
-execute on passengers run function vve_tutor:blue_car/control/get_signal
+execute on passengers if entity @s[type=minecraft:interaction] run function vve_tutor:blue_car/control/get_signal
 execute if entity @s[tag=vve_surface] run function vve_tutor:blue_car/control/main_surface
 execute if entity @s[tag=!vve_surface] run function vve_tutor:blue_car/control/main_air
 # 发动机引擎
@@ -32,7 +34,7 @@ scoreboard players set res int 1
 execute if score target_power int matches 0 if score damp_x int matches 0 if score damp_v int matches 0 run scoreboard players set res int 0
 execute if score res int matches 1 run function vve:vehicle/engine/main
 # 运动同步
-function vve:object/_sync_motion
+function ckr_vehicles:_sync_motion
 function vve_tutor:blue_car/_store
 
 # 声音程序
