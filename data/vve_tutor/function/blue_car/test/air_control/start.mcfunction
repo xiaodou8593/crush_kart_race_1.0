@@ -40,7 +40,7 @@ scoreboard players set test_n int 0
 
 scoreboard players set vve_euler_b int 6
 scoreboard players set vve_euler_vmax int 150000
-scoreboard players set target_theta int 900000
+scoreboard players set target_theta int -2147483648
 scoreboard players set target_phi int 0
 scoreboard players set target_psi int 0
 execute as @e[tag=result,limit=1] run function vve:euler_control/_store

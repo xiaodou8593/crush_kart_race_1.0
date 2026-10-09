@@ -25,11 +25,11 @@ function vve:object/_apply_friction
 # 姿态控制
 function vve:euler_control/_get
 execute as 0-0-0-0-0 run function vve:euler_control/main_angular
+function vve:euler_control/_store
 # 按键控制
 execute on passengers run function vve_tutor:blue_car/control/get_signal
 execute if entity @s[tag=vve_surface] run function vve_tutor:blue_car/control/main_surface
 execute if entity @s[tag=!vve_surface] run function vve_tutor:blue_car/control/main_air
-function vve:euler_control/_store
 # 发动机引擎
 scoreboard players set res int 1
 execute if score target_power int matches 0 if score damp_x int matches 0 if score damp_v int matches 0 run scoreboard players set res int 0
