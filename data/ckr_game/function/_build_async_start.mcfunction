@@ -37,6 +37,13 @@ execute store result storage vp_core:io input.slopes_cnt int 1 run data get stor
 data modify storage vp_core:io input.field_center set from storage vp_core:io field_center
 function ckr_utils:constructors/spawn_slopes/_new
 
+# 生成spawn_strips构造器
+data modify storage vp_core:io input set from storage ckr_utils:class spawn_strips_plate
+data modify storage vp_core:io input.list_strips set from storage ckr_game:io list_tracks[0].strip_plates
+execute store result storage vp_core:io input.strips_cnt int 1 run data get storage vp_core:io input.list_strips
+data modify storage vp_core:io input.field_center set from storage vp_core:io field_center
+function ckr_utils:constructors/spawn_strips/_new
+
 # 生成player_setup构造器
 data modify storage vp_core:io input set from storage vp_core:class player_setup_plate
 data modify storage vp_core:io input.player_set_func set value "ckr_game:_set_player"

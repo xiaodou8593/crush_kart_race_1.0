@@ -5,3 +5,5 @@ scoreboard players set -100 int -100
 
 function ckr_utils:constructors/spawn_slopes/init
 function ckr_utils:constructors/spawn_planes/init
+function ckr_utils:constructors/spawn_strips/init
+function ckr_utils:strip_area/init

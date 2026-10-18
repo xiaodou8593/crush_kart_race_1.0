@@ -1,0 +1,22 @@
+#ckr_utils:strip_area/doc.mcfo
+
+# strip_area临时对象
+_this:{
+	coord:{
+		<x,int,1w>,
+		<y,int,1w>,
+		<z,int,1w>
+	},
+	chunk_range:{
+		<chunk_x_min,int>,
+		<chunk_z_min,int>,
+		<chunk_x_max,int>,
+		<chunk_z_max,int>
+	},
+	size:{
+		<d,int,1w>,
+		<h,int,1w>,
+		<l,int,1w>
+	},
+	run_func:[storage ckr_utils:io run_func,String]
+}

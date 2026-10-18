@@ -14,11 +14,14 @@ execute if score input_w int matches 0 if score input_s int matches 0 run functi
 
 scoreboard players operation r int = rotation_r int
 scoreboard players set sign int 1
-execute if score shift_cnt_front int matches 1.. if score input_a int matches 1 if score input_d int matches 0 as 0-0-0-0-0 run function vve:vehicle/_set_rotation
+#execute if score shift_cnt_front int matches 1.. if score input_a int matches 1 if score input_d int matches 0 as 0-0-0-0-0 run function vve:vehicle/_set_rotation
+execute if score surface int matches 1.. if score input_a int matches 1 if score input_d int matches 0 as 0-0-0-0-0 run function vve:vehicle/_set_rotation
 scoreboard players operation sign int *= -1 int
-execute if score shift_cnt_front int matches 1.. if score input_d int matches 1 if score input_a int matches 0 as 0-0-0-0-0 run function vve:vehicle/_set_rotation
+#execute if score shift_cnt_front int matches 1.. if score input_d int matches 1 if score input_a int matches 0 as 0-0-0-0-0 run function vve:vehicle/_set_rotation
+execute if score surface int matches 1.. if score input_d int matches 1 if score input_a int matches 0 as 0-0-0-0-0 run function vve:vehicle/_set_rotation
 scoreboard players set sign int 0
-execute if score shift_cnt int matches 3.. if score input_a int matches 0 if score input_d int matches 0 as 0-0-0-0-0 run function vve:vehicle/_set_rotation
+#execute if score shift_cnt int matches 3.. if score input_a int matches 0 if score input_d int matches 0 as 0-0-0-0-0 run function vve:vehicle/_set_rotation
+execute if score surface int matches 1.. if score input_a int matches 0 if score input_d int matches 0 as 0-0-0-0-0 run function vve:vehicle/_set_rotation
 
 # 同步轮胎状态
 scoreboard players set wheel_state int 0

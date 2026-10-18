@@ -7,7 +7,9 @@ function vve_tutor:blue_car/_get
 execute as 0-0-0-0-0 run function vve:object/_iter_motion
 # 介质探测
 #execute as 0-0-0-0-0 run function vve:vehicle/_iter_cpoints_c
+tag @s add tmp
 execute as 0-0-0-0-0 run function vve_tutor:blue_car/_iter_cpoints_plane
+tag @s remove tmp
 # 力学迭代
 scoreboard players operation vy int -= vve_gravity int
 # 获取位移点数量

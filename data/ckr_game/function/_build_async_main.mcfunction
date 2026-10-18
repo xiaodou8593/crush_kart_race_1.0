@@ -20,8 +20,9 @@ execute if score temp_cnt int matches 1.. run return fail
 # 构造器时序
 execute as @e[tag=vp_constructor,tag=chunk_loader] run return run tag @s add running
 execute as @e[tag=vp_constructor,tag=area_clear] run return run tag @s add running
-execute as @e[tag=vp_constructor,tag=structure_builder] run return run tag @s add running
-execute as @e[tag=vp_constructor,tag=barrier_builder] run return run tag @s add running
+execute as @e[tag=vp_constructor,tag=spawn_planes] run return run tag @s add running
+execute as @e[tag=vp_constructor,tag=spawn_slopes] run return run tag @s add running
+execute as @e[tag=vp_constructor,tag=spawn_strips] run return run tag @s add running
 execute as @e[tag=vp_constructor,tag=player_setup] run return run tag @s add running
 execute as @e[tag=vp_constructor,tag=player_teleport] run return run tag @s add running
 # 构造完成
