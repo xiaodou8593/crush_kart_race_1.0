@@ -13,3 +13,5 @@ scoreboard players set height int 1000
 execute on passengers run function vve:seat/_prescript
 
 scoreboard players set @s vve_material_type 2
+
+scoreboard players operation @s module_id = #vve_tutor:blue_car/ module_id

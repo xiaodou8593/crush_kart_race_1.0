@@ -60,3 +60,5 @@ scoreboard objectives add quat_phi dummy
 function vve_tutor:blue_car/_consts
 
 function vve_tutor:blue_car/_class
+
+function vve_tutor:blue_car/init_operation

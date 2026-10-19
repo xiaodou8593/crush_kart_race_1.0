@@ -1,0 +1,6 @@
+#ckr_utils:constructors/iter_vehicles/doc.mcfo
+
+# iter_vehicles临时对象
+_this:{
+	progress:<vp_progress,int>
+}
