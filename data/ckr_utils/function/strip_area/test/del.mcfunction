@@ -2,4 +2,4 @@
 # 测试销毁
 
 kill @e[tag=ckr_utils_strip_area]
-kill @e[tag=ckr_utils_strip_area_display]
+execute as @e[tag=ckr_utils_strip_area_display] run function math:visual_plane/_del

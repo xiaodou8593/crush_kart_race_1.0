@@ -21,8 +21,9 @@ function math:uvw/_tovec_high
 
 function ckr_utils:constructors/spawn_vehicles/_push
 function ckr_utils:constructors/spawn_vehicles/_push
-# list_uuids[0]投射车辆的数据模板
-# ...
+# 根据list_uuids[0]投射车辆的数据模板
+data modify storage vve_tutor:io input set from storage vve_tutor:class blue_car_plate
+function vve_tutor:blue_car/_proj
 function ckr_utils:constructors/spawn_vehicles/_pop
 scoreboard players operation x int = vec_x int
 scoreboard players operation y int = vec_y int
@@ -32,12 +33,23 @@ scoreboard players set angular_y int 0
 scoreboard players set angular_z int 0
 function vve:object/_set_angular
 # 构造新的车辆数据模板，生成车辆
-# ...
+function vve_tutor:blue_car/_model
+data modify storage vve_tutor:io input set from storage vve_tutor:io result
+data modify entity @s Pos set from storage vve_tutor:io input.center
+execute at @s run function vve_tutor:blue_car/_new
+# 区块安全
+tp @s 0 0 0
 tag @e[tag=result,limit=1] add vp_instance
 function ckr_utils:constructors/spawn_vehicles/_pop
 
 # 移除list_uuids[0]
+data modify entity 0-0-0-0-1 Thrower set from storage ckr_utils:io list_uuids[0]
 data remove storage ckr_utils:io list_uuids[0]
+
+# 建立记分板指针
+execute as @e[tag=result,limit=1] run function vve:id/_pull
+scoreboard players operation tempid int = @e[tag=result,limit=1] vve_id
+execute as 0-0-0-0-1 on origin run scoreboard players operation @s ckr_vehicle_slot = tempid int
 
 # 计算构造进度
 execute store result score vp_progress int run data get storage ckr_utils:io list_uuids

@@ -25,5 +25,7 @@ execute as @e[tag=vp_constructor,tag=spawn_slopes] run return run tag @s add run
 execute as @e[tag=vp_constructor,tag=spawn_strips] run return run tag @s add running
 execute as @e[tag=vp_constructor,tag=player_setup] run return run tag @s add running
 execute as @e[tag=vp_constructor,tag=player_teleport] run return run tag @s add running
+execute as @e[tag=vp_constructor,tag=spawn_vehicles] run return run tag @s add running
+execute as @e[tag=vp_constructor,tag=iter_vehicles] run return run tag @s add running
 # 构造完成
 data modify storage vp_core:io game_state set value "prepare done"

@@ -24,24 +24,24 @@ data modify storage vp_core:io input.field_center set from storage vp_core:io fi
 function vp_core:constructors/area_clear/_new
 
 # 生成spawn_planes构造器
-data modify storage vp_core:io input set from storage ckr_utils:class spawn_planes_plate
-data modify storage vp_core:io input.list_planes set from storage ckr_game:io list_tracks[0].plane_plates
-execute store result storage vp_core:io input.planes_cnt int 1 run data get storage vp_core:io input.list_planes
-data modify storage vp_core:io input.field_center set from storage vp_core:io field_center
+data modify storage ckr_utils:io input set from storage ckr_utils:class spawn_planes_plate
+data modify storage ckr_utils:io input.list_planes set from storage ckr_game:io list_tracks[0].plane_plates
+execute store result storage ckr_utils:io input.planes_cnt int 1 run data get storage ckr_utils:io input.list_planes
+data modify storage ckr_utils:io input.field_center set from storage vp_core:io field_center
 function ckr_utils:constructors/spawn_planes/_new
 
 # 生成spawn_slopes构造器
-data modify storage vp_core:io input set from storage ckr_utils:class spawn_slopes_plate
-data modify storage vp_core:io input.list_slopes set from storage ckr_game:io list_tracks[0].slope_plates
-execute store result storage vp_core:io input.slopes_cnt int 1 run data get storage vp_core:io input.list_slopes
-data modify storage vp_core:io input.field_center set from storage vp_core:io field_center
+data modify storage ckr_utils:io input set from storage ckr_utils:class spawn_slopes_plate
+data modify storage ckr_utils:io input.list_slopes set from storage ckr_game:io list_tracks[0].slope_plates
+execute store result storage ckr_utils:io input.slopes_cnt int 1 run data get storage ckr_utils:io input.list_slopes
+data modify storage ckr_utils:io input.field_center set from storage vp_core:io field_center
 function ckr_utils:constructors/spawn_slopes/_new
 
 # 生成spawn_strips构造器
-data modify storage vp_core:io input set from storage ckr_utils:class spawn_strips_plate
-data modify storage vp_core:io input.list_strips set from storage ckr_game:io list_tracks[0].strip_plates
-execute store result storage vp_core:io input.strips_cnt int 1 run data get storage vp_core:io input.list_strips
-data modify storage vp_core:io input.field_center set from storage vp_core:io field_center
+data modify storage ckr_utils:io input set from storage ckr_utils:class spawn_strips_plate
+data modify storage ckr_utils:io input.list_strips set from storage ckr_game:io list_tracks[0].strip_plates
+execute store result storage ckr_utils:io input.strips_cnt int 1 run data get storage ckr_utils:io input.list_strips
+data modify storage ckr_utils:io input.field_center set from storage vp_core:io field_center
 function ckr_utils:constructors/spawn_strips/_new
 
 # 生成player_setup构造器
@@ -54,6 +54,17 @@ data modify storage vp_core:io input set from storage vp_core:class player_setup
 function ckr_game:_get_tp_points
 data modify storage vp_core:io input.tp_points set from storage ckr_game:io result
 function vp_core:constructors/player_teleport/_new
+
+# 生成spawn_vehicles构造器
+data modify storage ckr_utils:io input set from storage ckr_game:io list_tracks[0].spawn_vehicles_plate
+execute as @a[tag=vp_joiner] run data modify storage ckr_utils:io input.list_uuids append from @s UUID
+execute store result storage ckr_utils:io input.vehicles_cnt int 1 run data get storage ckr_utils:io input.list_uuids
+data modify storage ckr_utils:io input.field_center set from storage vp_core:io field_center
+function ckr_utils:constructors/spawn_vehicles/_new
+
+# 生成iter_vehicles构造器
+data modify storage ckr_utils:io input set from storage ckr_utils:class iter_vehicles_plate
+function ckr_utils:constructors/iter_vehicles/_new
 
 # 转动赛道列表
 function ckr_game:_next_track
