@@ -1,0 +1,4 @@
+#$(module_prefix)_shulker_to
+# 从潜影贝读入临时对象
+# 输入entity @e[type=minecraft:shulker]
+

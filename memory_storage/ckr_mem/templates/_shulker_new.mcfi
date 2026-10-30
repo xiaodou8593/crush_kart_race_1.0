@@ -1,0 +1,12 @@
+#$(module_prefix)_shulker_new
+# 从潜影贝读入临时对象，并生成实例
+# 输入entity @e[type=minecraft:shulker]
+# 输入执行位置
+# 输出 @e[tag=result,limit=1]
+# 占用storage $(project_name):io input
+# 占用storage $(project_name):io result
+
+function $(module_prefix)_shulker_to
+function $(module_prefix)_model
+data modify storage $(project_name):io input set from storage $(project_name):io result
+function $(module_prefix)_new

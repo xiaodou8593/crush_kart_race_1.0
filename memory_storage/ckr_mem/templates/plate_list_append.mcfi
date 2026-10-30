@@ -1,0 +1,6 @@
+#$(module_prefix)plate_list_append
+# $(module_prefix)_print_plate_list调用
+
+function $(module_prefix)_get
+function $(module_prefix)_model
+data modify storage $(project_name):io list append from storage $(project_name):io result

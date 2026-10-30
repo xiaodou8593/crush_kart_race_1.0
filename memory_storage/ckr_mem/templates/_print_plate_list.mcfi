@@ -1,0 +1,8 @@
+#$(module_prefix)_print_plate_list
+# 将所有实例构建为数据模板列表并打印
+# 占用storage $(project_name):io result
+# 输出storage $(project_name):io list
+
+data modify storage $(project_name):io list set value []
+execute as @e[tag=$(project_name)_$(module_name)] run function $(module_prefix)plate_list_append
+tellraw @a {"nbt":"list","storage":"$(project_name):io"}
