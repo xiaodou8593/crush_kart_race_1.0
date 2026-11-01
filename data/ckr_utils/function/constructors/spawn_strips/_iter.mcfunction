@@ -2,7 +2,7 @@
 # 临时对象运行一次构造迭代
 # 输出entity @e[tag=vp_instance]
 
-data modify storage vve:io input set from storage ckr_utils:io list_strips[0]
+data modify storage ckr_utils:io input set from storage ckr_utils:io list_strips[0]
 data remove storage ckr_utils:io list_strips[0]
 
 # 实例化条带

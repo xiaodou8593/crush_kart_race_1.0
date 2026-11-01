@@ -4,6 +4,8 @@
 scoreboard players set -100 int -100
 scoreboard players set 20000 int 20000
 scoreboard players set 30000 int 30000
+scoreboard players set 40000 int 40000
+scoreboard players set 50000 int 50000
 
 scoreboard objectives add ckr_vehicle_slot dummy
 

@@ -30,6 +30,14 @@ tag @e[tag=vp_instance,tag=!vve_slope_display] add ckr_slope
 tag @e[tag=vp_instance,tag=vve_slope_display] add ckr_slope_display
 tag @e[tag=vp_instance] remove vp_instance
 
+# 调用条带构造器
+scoreboard players set vp_progress int 0
+data modify storage ckr_utils:io list_strips set from storage ckr_utils:io input.strip_plates
+execute store result score strips_cnt int run data get storage ckr_utils:io list_strips
+function ckr_utils:constructors/spawn_strips/_start
+function ckr_utils:constructors/spawn_strips/_iter_all
+tag @e[tag=vp_instance] remove vp_instance
+
 function iframe:player_space/_get
 execute store result storage iframe:io player.slope_cnt int 1 if entity @e[tag=ckr_plane]
 execute store result storage iframe:io player.plane_cnt int 1 if entity @e[tag=ckr_slope]

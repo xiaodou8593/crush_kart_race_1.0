@@ -10,12 +10,13 @@ scoreboard players operation inp int -= vehicles_cnt int
 scoreboard players operation inp int *= -1 int
 scoreboard players add inp int 1
 scoreboard players operation res int -= inp int
-execute store result score u int store result score v int run scoreboard players operation res int > 0 int
+execute store result score u int store result score w int run scoreboard players operation res int > 0 int
 scoreboard players operation u int %= d int
-scoreboard players operation v int /= d int
-scoreboard players operation u int *= 20000 int
-scoreboard players operation v int *= 30000 int
-scoreboard players add u int 10000
+scoreboard players operation w int /= d int
+scoreboard players operation u int *= 40000 int
+scoreboard players operation w int *= 50000 int
+scoreboard players add u int 20000
+scoreboard players add w int 25000
 scoreboard players set v int 0
 function math:uvw/_tovec_high
 
@@ -35,10 +36,7 @@ function vve:object/_set_angular
 # 构造新的车辆数据模板，生成车辆
 function vve_tutor:blue_car/_model
 data modify storage vve_tutor:io input set from storage vve_tutor:io result
-data modify entity @s Pos set from storage vve_tutor:io input.center
-execute at @s run function vve_tutor:blue_car/_new
-# 区块安全
-tp @s 0 0 0
+execute as @e[tag=math_marker,limit=1] run function ckr_utils:constructors/spawn_vehicles/iter_spawn
 tag @e[tag=result,limit=1] add vp_instance
 function ckr_utils:constructors/spawn_vehicles/_pop
 

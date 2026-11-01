@@ -57,7 +57,7 @@ function vp_core:constructors/player_teleport/_new
 
 # 生成spawn_vehicles构造器
 data modify storage ckr_utils:io input set from storage ckr_game:io list_tracks[0].spawn_vehicles_plate
-execute as @a[tag=vp_joiner] run data modify storage ckr_utils:io input.list_uuids append from @s UUID
+execute as @a[tag=vp_joiner] run data modify storage ckr_utils:io input.list_uuids append from entity @s UUID
 execute store result storage ckr_utils:io input.vehicles_cnt int 1 run data get storage ckr_utils:io input.list_uuids
 data modify storage ckr_utils:io input.field_center set from storage vp_core:io field_center
 function ckr_utils:constructors/spawn_vehicles/_new

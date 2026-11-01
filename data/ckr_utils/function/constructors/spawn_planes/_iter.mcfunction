@@ -14,9 +14,12 @@ execute store result score vec_y int run data get storage vp_core:io field_cente
 execute store result score vec_z int run data get storage vp_core:io field_center[2] 10000
 function vve:plane/_shift_vec
 execute as @e[tag=result,limit=1] run function vve:plane/_store
+tag @e[tag=result,limit=1] add tmp
 function vve:plane/_update_display
 item replace entity @e[tag=result,limit=1] container.0 with minecraft:glass
 tag @e[tag=result,limit=1] add vp_instance
+data modify entity @e[tag=tmp,limit=1] data.display_uuid set from entity @e[tag=result,limit=1] UUID
+tag @e[tag=tmp,limit=1] remove tmp
 
 # 计算构造进度
 execute store result score vp_progress int run data get storage ckr_utils:io list_planes
