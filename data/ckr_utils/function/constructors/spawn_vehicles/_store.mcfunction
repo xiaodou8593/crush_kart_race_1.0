@@ -5,7 +5,6 @@
 scoreboard players operation @s vp_progress = vp_progress int
 data modify entity @s data.list_uuids set from storage ckr_utils:io list_uuids
 scoreboard players operation @s vehicles_cnt = vehicles_cnt int
-data modify entity @s data.field_center set from storage vp_core:io field_center
 scoreboard players operation @s d = d int
 scoreboard players operation @s l = l int
 scoreboard players operation @s x = x int

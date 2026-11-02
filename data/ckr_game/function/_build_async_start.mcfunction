@@ -49,9 +49,15 @@ function ckr_utils:constructors/spawn_strips/_new
 
 # 生成spawn_vehicles构造器
 data modify storage ckr_utils:io input set from storage ckr_game:io list_tracks[0].spawn_vehicles_plate
+function ckr_utils:constructors/spawn_vehicles/_proj
+execute store result score vec_x int run data get storage vp_core:io field_center[0] 10000
+execute store result score vec_y int run data get storage vp_core:io field_center[1] 10000
+execute store result score vec_z int run data get storage vp_core:io field_center[2] 10000
+function ckr_utils:constructors/spawn_vehicles/_shift_vec
+function ckr_utils:constructors/spawn_vehicles/_model
+data modify storage ckr_utils:io input set from storage ckr_utils:io result
 execute as @a[tag=vp_joiner] run data modify storage ckr_utils:io input.list_uuids append from entity @s UUID
 execute store result storage ckr_utils:io input.vehicles_cnt int 1 run data get storage ckr_utils:io input.list_uuids
-data modify storage ckr_utils:io input.field_center set from storage vp_core:io field_center
 function ckr_utils:constructors/spawn_vehicles/_new
 
 # 生成iter_vehicles构造器

@@ -16,6 +16,7 @@ function ckr_utils:strip_area/_shift_vec
 execute as @e[tag=result,limit=1] run function ckr_utils:strip_area/_store
 function ckr_utils:strip_area/_update_display
 tag @e[tag=result,limit=1] add vp_instance
+execute as @e[tag=result,limit=1] on passengers run tag @s add vp_instance
 
 # 计算构造进度
 execute store result score vp_progress int run data get storage ckr_utils:io list_strips

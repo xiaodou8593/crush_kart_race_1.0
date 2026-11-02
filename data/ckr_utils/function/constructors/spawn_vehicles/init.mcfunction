@@ -11,7 +11,6 @@ function module_control:data/_reg
 scoreboard players operation #ckr_utils:constructors/spawn_vehicles/ module_id = res int
 
 data modify storage ckr_utils:io list_uuids set value []
-data modify storage vp_core:io field_center set value [0.0d, 0.0d, 0.0d]
 
 scoreboard objectives add vp_progress dummy
 scoreboard objectives add vehicles_cnt dummy
