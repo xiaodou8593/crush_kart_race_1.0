@@ -14,4 +14,7 @@ data modify storage ckr_utils:io rec set value [{}]
 function ckr_utils:constructors/spawn_slopes/init
 function ckr_utils:constructors/spawn_planes/init
 function ckr_utils:constructors/spawn_strips/init
+function ckr_utils:constructors/iter_vehicles/init
+function ckr_utils:constructors/spawn_vehicles/init
+function ckr_utils:constructors/vehicle_setup/init
 function ckr_utils:strip_area/init

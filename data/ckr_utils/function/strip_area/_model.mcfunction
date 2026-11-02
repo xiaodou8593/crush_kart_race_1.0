@@ -2,7 +2,7 @@
 # 使用临时对象构建数据模板
 # 输出数据模板storage ckr_utils:io result
 
-data modify storage ckr_utils:io result set value {coord:[0.0d, 0.0d, 0.0d], chunk_range:[0.0d, 0.0d, 0.0d, 0.0d], size:[0.0d, 0.0d, 0.0d], run_func:""}
+data modify storage ckr_utils:io result set value {coord:[0.0d, 0.0d, 0.0d], chunk_range:[0.0d, 0.0d, 0.0d, 0.0d], size:[0.0d, 0.0d, 0.0d], run_func:"", index:0, respawn_pos:[0.0d, 0.0d, 0.0d]}
 
 execute store result storage ckr_utils:io result.coord[0] double 0.0001 run scoreboard players get x int
 execute store result storage ckr_utils:io result.coord[1] double 0.0001 run scoreboard players get y int
@@ -15,3 +15,7 @@ execute store result storage ckr_utils:io result.size[0] double 0.0001 run score
 execute store result storage ckr_utils:io result.size[1] double 0.0001 run scoreboard players get h int
 execute store result storage ckr_utils:io result.size[2] double 0.0001 run scoreboard players get l int
 data modify storage ckr_utils:io result.run_func set from storage ckr_utils:io run_func
+execute store result storage ckr_utils:io result.index int 1 run scoreboard players get index int
+execute store result storage ckr_utils:io result.respawn_pos[0] double 0.0001 run scoreboard players get respawn_x int
+execute store result storage ckr_utils:io result.respawn_pos[1] double 0.0001 run scoreboard players get respawn_y int
+execute store result storage ckr_utils:io result.respawn_pos[2] double 0.0001 run scoreboard players get respawn_z int

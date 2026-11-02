@@ -1,0 +1,6 @@
+#ckr_utils:constructors/vehicle_setup/doc.mcfo
+
+# vehicle_setup临时对象
+_this:{
+	progress:<vp_progress,int>
+}

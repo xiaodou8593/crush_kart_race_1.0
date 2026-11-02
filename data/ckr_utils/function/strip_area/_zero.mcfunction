@@ -12,3 +12,7 @@ scoreboard players set d int 0
 scoreboard players set h int 0
 scoreboard players set l int 0
 data modify storage ckr_utils:io run_func set value ""
+scoreboard players set index int 0
+scoreboard players set respawn_x int 0
+scoreboard players set respawn_y int 0
+scoreboard players set respawn_z int 0

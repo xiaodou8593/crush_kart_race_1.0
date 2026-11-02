@@ -13,3 +13,7 @@ execute store result score d int run data get storage ckr_utils:io input.size[0]
 execute store result score h int run data get storage ckr_utils:io input.size[1] 10000
 execute store result score l int run data get storage ckr_utils:io input.size[2] 10000
 data modify storage ckr_utils:io run_func set from storage ckr_utils:io input.run_func
+execute store result score index int run data get storage ckr_utils:io input.index
+execute store result score respawn_x int run data get storage ckr_utils:io input.respawn_pos[0] 10000
+execute store result score respawn_y int run data get storage ckr_utils:io input.respawn_pos[1] 10000
+execute store result score respawn_z int run data get storage ckr_utils:io input.respawn_pos[2] 10000

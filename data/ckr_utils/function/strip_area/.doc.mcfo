@@ -18,5 +18,11 @@ _this:{
 		<h,int,1w>,
 		<l,int,1w>
 	},
-	run_func:[storage ckr_utils:io run_func,String]
+	run_func:[storage ckr_utils:io run_func,String],
+	index:<index,int>,
+	respawn_pos:{
+		<respawn_x,int,1w>,
+		<respawn_y,int,1w>,
+		<respawn_z,int,1w>
+	}
 }

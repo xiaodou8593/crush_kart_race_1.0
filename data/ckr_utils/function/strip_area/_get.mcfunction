@@ -13,3 +13,7 @@ scoreboard players operation d int = @s d
 scoreboard players operation h int = @s h
 scoreboard players operation l int = @s l
 data modify storage ckr_utils:io run_func set from entity @s data.run_func
+scoreboard players operation index int = @s index
+scoreboard players operation respawn_x int = @s respawn_x
+scoreboard players operation respawn_y int = @s respawn_y
+scoreboard players operation respawn_z int = @s respawn_z

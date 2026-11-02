@@ -12,3 +12,5 @@ data modify storage vp_core:io game_state set from storage ckr_game:io input.gam
 data modify storage vp_core:io field_size set from storage ckr_game:io input.field_size
 data modify storage vp_core:io field_height set from storage ckr_game:io input.field_height
 data modify storage vp_core:io field_center set from storage ckr_game:io input.field_center
+execute store result score game_timer int run data get storage ckr_game:io input.game_timer
+execute store result score strips_cnt 1 run data get storage ckr_game:io input.strips_cnt

@@ -10,6 +10,10 @@ scoreboard objectives add chunk_z_max dummy
 scoreboard objectives add d dummy
 scoreboard objectives add h dummy
 scoreboard objectives add l dummy
+scoreboard objectives add index dummy
+scoreboard objectives add respawn_x dummy
+scoreboard objectives add respawn_y dummy
+scoreboard objectives add respawn_z dummy
 
 function ckr_utils:strip_area/_consts
 

@@ -5,6 +5,9 @@
 gamemode spectator @a[tag=vp_joiner]
 execute as @e[tag=math_marker,limit=1] run function ckr_game:watch_build
 
+# 确保模拟器处于停止运行状态
+function vve_tutor:simulator/_stop
+
 # 生成chunk_loader构造器
 data modify storage vp_core:io input set from storage vp_core:class chunk_loader_plate
 execute store result score temp_size int run data get storage vp_core:io field_size
@@ -44,17 +47,6 @@ execute store result storage ckr_utils:io input.strips_cnt int 1 run data get st
 data modify storage ckr_utils:io input.field_center set from storage vp_core:io field_center
 function ckr_utils:constructors/spawn_strips/_new
 
-# 生成player_setup构造器
-data modify storage vp_core:io input set from storage vp_core:class player_setup_plate
-data modify storage vp_core:io input.player_set_func set value "ckr_game:_set_player"
-function vp_core:constructors/player_setup/_new
-
-# 生成player_teleport构造器
-data modify storage vp_core:io input set from storage vp_core:class player_setup_plate
-function ckr_game:_get_tp_points
-data modify storage vp_core:io input.tp_points set from storage ckr_game:io result
-function vp_core:constructors/player_teleport/_new
-
 # 生成spawn_vehicles构造器
 data modify storage ckr_utils:io input set from storage ckr_game:io list_tracks[0].spawn_vehicles_plate
 execute as @a[tag=vp_joiner] run data modify storage ckr_utils:io input.list_uuids append from entity @s UUID
@@ -65,6 +57,11 @@ function ckr_utils:constructors/spawn_vehicles/_new
 # 生成iter_vehicles构造器
 data modify storage ckr_utils:io input set from storage ckr_utils:class iter_vehicles_plate
 function ckr_utils:constructors/iter_vehicles/_new
+
+# 生成player_setup构造器
+data modify storage vp_core:io input set from storage vp_core:class player_setup_plate
+data modify storage vp_core:io input.player_set_func set value "ckr_game:_set_player"
+function vp_core:constructors/player_setup/_new
 
 # 转动赛道列表
 function ckr_game:_next_track

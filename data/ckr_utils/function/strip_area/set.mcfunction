@@ -12,3 +12,7 @@ execute store result score @s d run data get storage ckr_utils:io input.size[0] 
 execute store result score @s h run data get storage ckr_utils:io input.size[1] 10000
 execute store result score @s l run data get storage ckr_utils:io input.size[2] 10000
 data modify entity @s data.run_func set from storage ckr_utils:io input.run_func
+execute store result score @s index run data get storage ckr_utils:io input.index
+execute store result score @s respawn_x run data get storage ckr_utils:io input.respawn_pos[0] 10000
+execute store result score @s respawn_y run data get storage ckr_utils:io input.respawn_pos[1] 10000
+execute store result score @s respawn_z run data get storage ckr_utils:io input.respawn_pos[2] 10000

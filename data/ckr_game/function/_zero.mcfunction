@@ -11,3 +11,5 @@ data modify storage vp_core:io game_state set value ""
 data modify storage vp_core:io field_size set value 0
 data modify storage vp_core:io field_height set value 0
 data modify storage vp_core:io field_center set value [0.0d, 0.0d, 0.0d]
+scoreboard players set game_timer int 0
+scoreboard players set strips_cnt 1 0

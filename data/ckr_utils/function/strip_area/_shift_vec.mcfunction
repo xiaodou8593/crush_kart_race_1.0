@@ -6,4 +6,8 @@ scoreboard players operation x int += vec_x int
 scoreboard players operation y int += vec_y int
 scoreboard players operation z int += vec_z int
 
+scoreboard players operation respawn_x int += vec_x int
+scoreboard players operation respawn_y int += vec_y int
+scoreboard players operation respawn_z int += vec_z int
+
 function ckr_utils:strip_area/_calc_chunk_range
