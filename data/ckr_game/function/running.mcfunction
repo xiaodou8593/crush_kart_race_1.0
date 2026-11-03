@@ -11,6 +11,9 @@ scoreboard players set @e[tag=vve_tutor_blue_car] int 0
 execute as @e[tag=vve_tutor_blue_car] on passengers on passengers run scoreboard players set @s int 1
 execute as @e[tag=vve_tutor_blue_car,scores={int=0}] run function ckr_vehicles:_drag_back
 
+# 游戏计时
+scoreboard players add game_timer int 1
+
 # 获取玩家人数
 execute store result score temp_cnt int if entity @a[tag=vp_gamer]
 

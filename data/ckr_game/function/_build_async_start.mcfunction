@@ -8,6 +8,9 @@ execute as @e[tag=math_marker,limit=1] run function ckr_game:watch_build
 # 确保模拟器处于停止运行状态
 function vve_tutor:simulator/_stop
 
+# 设置虚空线
+scoreboard players set plane_y int -500000
+
 # 生成chunk_loader构造器
 data modify storage vp_core:io input set from storage vp_core:class chunk_loader_plate
 execute store result score temp_size int run data get storage vp_core:io field_size
