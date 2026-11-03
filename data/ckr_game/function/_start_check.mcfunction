@@ -4,4 +4,4 @@
 
 execute store result score temp_cnt int if entity @a[tag=vp_gamer]
 scoreboard players set res int 0
-execute if score temp_cnt int matches 3.. run scoreboard players set res int 1
+execute if score temp_cnt int matches 1.. run scoreboard players set res int 1

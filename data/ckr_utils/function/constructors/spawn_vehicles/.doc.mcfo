@@ -5,7 +5,6 @@ _this:{
 	progress:<vp_progress,int>,
 	list_uuids:[storage ckr_utils:io list_uuids,ListVoid],
 	vehicles_cnt:<vehicles_cnt,int,1>,
-	field_center:[storage vp_core:io field_center,ListDouble,3],
 	range:{
 		<d,int,1>,
 		<l,int,1>
