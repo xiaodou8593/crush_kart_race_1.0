@@ -1,9 +1,11 @@
 #ckr_utils:guis/track_edit/save_button
 # ckr_utils:guis/track_edit/main调用
 
-data modify storage ckr_utils:io temp set value {slope_plates:[],plane_plates:[]}
+data modify storage ckr_utils:io temp set value {slope_plates:[],plane_plates:[],wall_plates:[],pool_plates:[]}
 execute if entity @e[tag=ckr_slope,tag=!tmp,limit=1] run function ckr_utils:guis/track_edit/append_slope
 execute if entity @e[tag=ckr_plane,tag=!tmp,limit=1] run function ckr_utils:guis/track_edit/append_plane
+execute if entity @e[tag=ckr_utils_wall_area,tag=!tmp,limit=1] run function ckr_utils:guis/track_edit/append_wall
+execute if entity @e[tag=ckr_utils_pool_area,tag=!tmp,limit=1] run function ckr_utils:guis/track_edit/append_pool
 tag @e[tag=tmp] remove tmp
 
 execute at @s run setblock ~ ~ ~ chest{Items:[{id:"minecraft:glass",count:1,slot:0,components:{"minecraft:custom_data":{track_data:{}}}}]}

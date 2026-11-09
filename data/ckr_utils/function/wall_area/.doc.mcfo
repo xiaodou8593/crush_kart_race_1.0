@@ -1,0 +1,20 @@
+#ckr_utils:wall_area/doc.mcfo
+
+# wall_area临时对象
+_this:{
+	center:{
+		<x,int,1w>,
+		<y,int,1w>,
+		<z,int,1w>
+	},
+	size:{
+		<d,int,1w>,
+		<h,int,1w>,
+		<l,int,1w>
+	},
+	nvec:{
+		<nvec_x,int,1w>,
+		<nvec_y,int,1w>,
+		<nvec_z,int,1w>
+	}
+}

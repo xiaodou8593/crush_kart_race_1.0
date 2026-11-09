@@ -7,12 +7,19 @@
 function vve_tutor:simulator/main
 
 # 防止玩家下车
-scoreboard players set @e[tag=vve_tutor_blue_car] int 0
-execute as @e[tag=vve_tutor_blue_car] on passengers on passengers run scoreboard players set @s int 1
-execute as @e[tag=vve_tutor_blue_car,scores={int=0}] run function ckr_vehicles:_drag_back
+execute as @e[tag=vve_tutor_blue_car,predicate=!ckr_vehicles:_player_on] run function ckr_vehicles:_drag_back
 
 # 游戏计时
-scoreboard players add game_timer int 1
+execute store result score temp_modular int run scoreboard players add game_timer int 1
+scoreboard players operation temp_modular int %= 10 int
+# 降频调度刷怪区
+execute as @e[tag=ckr_utils_pool_area,tag=vp_instance,predicate=vp_core:_match_modular] run function ckr_utils:pool_area/main
+
+# 怪物受伤更新
+execute as @e[tag=ckr_mobs_update] run function ckr_mobs:generic/main_update
+
+# 玩家低频函数
+execute as @a[tag=vp_gamer,scores={vp_modular=0}] run function ckr_player:main_low
 
 # 获取玩家人数
 execute store result score temp_cnt int if entity @a[tag=vp_gamer]

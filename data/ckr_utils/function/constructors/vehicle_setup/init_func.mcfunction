@@ -15,7 +15,7 @@ execute as @e[tag=tmp,limit=1] store result storage marker_control:io result.res
 execute as @e[tag=tmp,limit=1] store result storage marker_control:io result.respawn_pos[2] double 0.0001 run scoreboard players get @s respawn_z
 tag @e[tag=tmp] remove tmp
 # 已过检查点数据
-data modify storage marker_control:io result.last_index set value 0
+execute store result storage marker_control:io result.last_index int 1 run scoreboard players get tempid int
 # 已过圈数
 data modify storage marker_control:io result.laps set value 0
 function marker_control:data/_store

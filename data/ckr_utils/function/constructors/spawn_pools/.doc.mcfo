@@ -1,0 +1,9 @@
+#ckr_utils:constructors/spawn_pools/doc.mcfo
+
+# spawn_pools临时对象
+_this:{
+	progress:<vp_progress,int>,
+	list_pools:[storage ckr_utils:io list_pools],
+	pools_cnt:<pools_cnt,int,1>,
+	field_center:[storage vp_core:io field_center,ListDouble,3]
+}

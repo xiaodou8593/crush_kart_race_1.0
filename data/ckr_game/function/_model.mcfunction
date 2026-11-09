@@ -15,4 +15,4 @@ data modify storage ckr_game:io result.field_size set from storage vp_core:io fi
 data modify storage ckr_game:io result.field_height set from storage vp_core:io field_height
 data modify storage ckr_game:io result.field_center set from storage vp_core:io field_center
 execute store result storage ckr_game:io result.game_timer int 1 run scoreboard players get game_timer int
-execute store result storage ckr_game:io result.strips_cnt int 1 run scoreboard players get strips_cnt 1
+execute store result storage ckr_game:io result.strips_cnt int 1 run scoreboard players get strips_cnt int

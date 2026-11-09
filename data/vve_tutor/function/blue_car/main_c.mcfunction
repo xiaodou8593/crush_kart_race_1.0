@@ -58,7 +58,7 @@ scoreboard players set u int 0
 scoreboard players set v int 0
 scoreboard players set w int 9000
 execute if score temp_max int matches 500.. as 0-0-0-0-0 run function math:uvw/_topos
-execute if score temp_max int matches 500.. as 0-0-0-0-0 at @s run function vve_tutor:blue_car/main_damage
+execute if score temp_max int matches 500.. at 0-0-0-0-0 run function vve_tutor:blue_car/main_damage
 
 # 坐标安全
 execute unless score y int matches -640000..5120000 run function vve_tutor:blue_car/_del

@@ -7,6 +7,9 @@
 execute if data storage vp_core:io {game_state:"clear done"} run return run data modify storage vp_core:io game_state set value "cleared"
 schedule function ckr_game:_del_async_main 1t replace
 
+# 最后销毁受保护实例
+execute unless entity @e[tag=vp_instance,tag=!vp_instance_protected] run tag @e[tag=vp_instance_protected] remove vp_instance_protected
+
 # 销毁实例
 scoreboard players set loop int 15
 execute if score loop int matches 1.. run function ckr_game:del_loop

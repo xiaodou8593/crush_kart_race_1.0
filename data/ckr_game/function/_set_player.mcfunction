@@ -6,6 +6,7 @@
 function vp_core:player_space/_get
 data modify storage vp_core:io result.death_func set value "ckr_game:death_func"
 data modify storage vp_core:io result.respawn_func set value "ckr_game:respawn_func"
+data modify storage vp_core:io result.ckr_coins set value 0
 function vp_core:player_space/_store
 
 # 骑乘自己的载具

@@ -13,5 +13,5 @@ _this:{
 	field_height:[storage vp_core:io field_height,Int],
 	field_center:[storage vp_core:io field_center,ListDouble,3],
 	game_timer:<game_timer,int,1>,
-	strips_cnt:<strips_cnt,1>
+	strips_cnt:<strips_cnt,int,1>
 }

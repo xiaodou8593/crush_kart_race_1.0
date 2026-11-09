@@ -2,6 +2,7 @@
 # 临时对象运行一次构造迭代
 # 输出entity @e[tag=vp_instance]
 
+execute unless data storage ckr_utils:io list_planes[0] run return run scoreboard players set vp_progress int 100
 data modify storage vve:io input set from storage ckr_utils:io list_planes[0]
 data remove storage ckr_utils:io list_planes[0]
 

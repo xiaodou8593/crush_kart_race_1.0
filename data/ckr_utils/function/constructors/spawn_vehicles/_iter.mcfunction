@@ -2,6 +2,7 @@
 # 临时对象运行一次构造迭代
 # 输出entity @e[tag=vp_instance]
 
+execute unless data storage ckr_utils:io list_uuids[0] run return run scoreboard players set vp_progress int 100
 # 获取序号，计算坐标
 scoreboard players operation res int = d int
 scoreboard players operation res int *= l int

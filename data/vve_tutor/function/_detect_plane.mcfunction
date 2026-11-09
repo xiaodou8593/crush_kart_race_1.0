@@ -34,7 +34,7 @@ execute if block ~ ~ ~ minecraft:barrier run return run function vve_tutor:barri
 # 空气介质
 execute if score c_y int > plane_y int run return run scoreboard players operation friction_response int = vve_air_friction int
 
-execute as @e[tag=tmp,limit=1] run function ckr_vehicles:_respawn
+execute as @e[tag=tmp,limit=1] run function ckr_vehicles:_respawn_async
 return fail
 
 # 地面介质

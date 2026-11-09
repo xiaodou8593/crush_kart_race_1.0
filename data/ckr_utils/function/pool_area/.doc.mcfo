@@ -1,0 +1,18 @@
+#ckr_utils:pool_area/doc.mcfo
+
+# pool_area临时对象
+_this:{
+	center:{
+		<x,int,1w>,
+		<y,int,1w>,
+		<z,int,1w>
+	},
+	size:{
+		<d,int,1w>,
+		<l,int,1w>
+	},
+	spawn_interval:<spawn_interval,int,1>,
+	spawn_timer:<spawn_timer,int,1>,
+	spawn_max:<spawn_max,int,1>,
+	spawn_plates:[storage ckr_utils:io spawn_plates,ListCompound]
+}

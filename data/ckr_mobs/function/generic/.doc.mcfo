@@ -1,0 +1,18 @@
+#ckr_mobs:generic/doc.mcfo
+
+# generic临时对象
+_this:{
+	center:{
+		<x,int,1w>,
+		<y,int,1w>,
+		<z,int,1w>
+	},
+	health:<hp,int>,
+	damage:<damage,int>,
+	entity_type:[storage ckr_mobs:io entity_type,String],
+	coins_range:{
+		<coins_min,int>,
+		<coins_max,int>
+	},
+	last_attacker:[storage ckr_mobs:io last_attacker,String]
+}

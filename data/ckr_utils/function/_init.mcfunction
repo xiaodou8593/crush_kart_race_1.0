@@ -17,4 +17,8 @@ function ckr_utils:constructors/spawn_strips/init
 function ckr_utils:constructors/iter_vehicles/init
 function ckr_utils:constructors/spawn_vehicles/init
 function ckr_utils:constructors/vehicle_setup/init
+function ckr_utils:constructors/spawn_pools/init
+function ckr_utils:constructors/spawn_walls/init
 function ckr_utils:strip_area/init
+function ckr_utils:wall_area/init
+function ckr_utils:pool_area/init
