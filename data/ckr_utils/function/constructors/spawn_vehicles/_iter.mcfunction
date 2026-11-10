@@ -39,6 +39,7 @@ function vve_tutor:blue_car/_model
 data modify storage vve_tutor:io input set from storage vve_tutor:io result
 execute as @e[tag=math_marker,limit=1] run function ckr_utils:constructors/spawn_vehicles/iter_spawn
 tag @e[tag=result,limit=1] add vp_instance
+tag @e[tag=result,limit=1] add ckr_vehicle
 function ckr_utils:constructors/spawn_vehicles/_pop
 
 # 移除list_uuids[0]
