@@ -25,3 +25,6 @@ execute store result storage marker_control:io result.laps int 1 run scoreboard 
 function marker_control:data/_store
 
 execute at @s run playsound minecraft:block.note_block.pling player @a ~ ~ ~ 1.5
+
+# 更新ui
+execute on passengers on passengers run tag @s add ckr_ui_update

@@ -1,0 +1,4 @@
+#ckr_player:bossbar/update_name/14
+# ckr_player:bossbar/_update_name调用
+
+bossbar set ckr_player:bossbar_14 name ["",{"text":"\ue000","font":"s3:default"},{"score":{"name":"temp_hp","objective":"int"}},{"text":"   "},{"text":"\ue001","font":"s3:default"},{"score":{"name":"temp_coins","objective":"int"}},{"text":"   "},{"text":"\ue006","font":"s3:default"},{"score":{"name":"temp_laps","objective":"int"}},{"text":"/"},{"score":{"name":"3","objective":"int"}}]

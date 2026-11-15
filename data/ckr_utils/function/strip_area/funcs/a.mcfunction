@@ -32,3 +32,6 @@ execute if score temp_e int > 0 int if score temp_e int <= temp_d int store resu
 function marker_control:data/_store
 
 execute at @s run playsound minecraft:block.note_block.pling player @a ~ ~ ~ 1.5
+
+# 更新ui
+execute on passengers on passengers run tag @s add ckr_ui_update

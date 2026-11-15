@@ -2,10 +2,12 @@
 # 初始化一名ckr_game玩家
 # 输入玩家为执行者
 
-# 死亡/复活设置
+# 玩家空间设置
 function vp_core:player_space/_get
 data modify storage vp_core:io result.death_func set value "ckr_game:death_func"
 data modify storage vp_core:io result.respawn_func set value "ckr_game:respawn_func"
+data modify storage vp_core:io result.vehicle_mhp set value 120
+data modify storage vp_core:io result.vehicle_hp set from storage vp_core:io result.vehicle_mhp
 data modify storage vp_core:io result.ckr_coins set value 0
 function vp_core:player_space/_store
 
@@ -15,3 +17,7 @@ execute as @e[tag=vve_tutor_blue_car] if score @s vve_id = tempid int run tag @s
 tag @s add input
 execute as @e[tag=tmp,limit=1] run function vve_tutor:blue_car/_seat_on
 tag @e[tag=tmp] remove tmp
+
+# 获取bossbar并更新
+function ckr_player:bossbar/_pull
+tag @s add ckr_ui_update

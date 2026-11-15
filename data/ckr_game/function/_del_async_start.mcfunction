@@ -1,6 +1,9 @@
 #ckr_game:_del_async_start
 # 开始析构游戏实例
 
+# 释放所有bossbar
+function ckr_player:bossbar/_return_all
+
 # 保护区块加载器最后销毁
 tag @e[tag=vp_instance,tag=chunk_area] add vp_instance_protected
 

@@ -34,3 +34,6 @@ function marker_control:data/_store
 execute on passengers on passengers run title @s title ""
 execute on passengers on passengers run title @s subtitle "在空中按下Space打开滑翔伞"
 execute at @s run playsound minecraft:block.note_block.pling player @a ~ ~ ~ 1.5
+
+# 更新ui
+execute on passengers on passengers run tag @s add ckr_ui_update

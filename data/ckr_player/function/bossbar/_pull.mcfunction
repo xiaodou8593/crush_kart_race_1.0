@@ -11,3 +11,5 @@ data modify storage vp_core:io result.bossbar_ptr set from storage ckr_player:io
 data modify storage ckr_player:io active_bossbars append from storage ckr_player:io free_bossbars[0]
 data remove storage ckr_player:io free_bossbars[0]
 function vp_core:player_space/_store
+
+function ckr_player:bossbar/pull_this with storage vp_core:io result
