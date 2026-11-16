@@ -19,3 +19,7 @@ execute store result storage marker_control:io result.last_index int 1 run score
 # 已过圈数
 data modify storage marker_control:io result.laps set value 0
 function marker_control:data/_store
+
+# 分配vp_modular
+scoreboard players add #ckr_vehicles: vp_modular 1
+execute store result score @s vp_modular run scoreboard players operation #ckr_vehicles: vp_modular %= 10 int

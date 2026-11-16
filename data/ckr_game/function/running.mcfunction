@@ -15,6 +15,9 @@ scoreboard players operation temp_modular int %= 10 int
 # 降频调度刷怪区
 execute as @e[tag=ckr_utils_pool_area,tag=vp_instance,predicate=vp_core:_match_modular] run function ckr_utils:pool_area/main
 
+# 载具爆炸状态
+execute as @e[tag=ckr_vehicle,tag=vp_instance,tag=ckr_vehicle_exploding,predicate=vp_core:_match_modular] at @s run function ckr_vehicles:exploding/main
+
 # 怪物受伤更新
 execute as @e[tag=ckr_mobs_update] run function ckr_mobs:generic/main_update
 

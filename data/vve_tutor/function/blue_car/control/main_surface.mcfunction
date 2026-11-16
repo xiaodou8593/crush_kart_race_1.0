@@ -1,6 +1,9 @@
 #vve_tutor:blue_car/control/main_surface
 # vve_tutor:blue_car/main_c调用
 
+# 爆炸状态不可操控
+execute if entity @s[tag=ckr_vehicle_exploding] run return fail
+
 # 空格键等价于S键
 scoreboard players operation input_s int > input_space int
 
