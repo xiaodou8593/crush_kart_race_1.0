@@ -17,3 +17,7 @@ execute if score res int matches 0 run data modify storage vp_core:io game_state
 title @a[tag=vp_gamer] reset
 
 scoreboard players set game_timer int 80
+
+# 进入物品栏iframe ui
+data modify storage iframe:io input set value "ckr_player:guis/default"
+execute as @a[tag=vp_gamer] run function iframe:_enter
