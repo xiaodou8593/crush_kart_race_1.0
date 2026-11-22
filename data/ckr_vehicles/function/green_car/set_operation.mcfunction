@@ -1,0 +1,17 @@
+#ckr_vehicles:green_car/set_operation
+# ckr_vehicles:green_car/_new调用
+
+function ckr_vehicles:green_car/_get
+function ckr_vehicles:green_car/_update_display
+
+# 设置载具模型
+item replace entity @s container.0 with minecraft:clay_ball[minecraft:item_model="bx_res_bca:vehicle_0",minecraft:custom_model_data={floats:[0.0f]}]
+
+# 设置座椅宽高（高度调整玩家位置）
+scoreboard players set width int 10000
+scoreboard players set height int -1000
+execute on passengers run function vve:seat/_prescript
+
+scoreboard players set @s vve_material_type 2
+
+scoreboard players operation @s module_id = #ckr_vehicles:green_car/ module_id

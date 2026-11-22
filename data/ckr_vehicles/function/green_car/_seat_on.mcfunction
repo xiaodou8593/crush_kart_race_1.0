@@ -1,0 +1,5 @@
+#ckr_vehicles:green_car/_seat_on
+# 使实体乘坐载具座椅
+# 输入entity @e[tag=input,limit=1]
+
+execute on passengers run ride @e[tag=input,limit=1] mount @s

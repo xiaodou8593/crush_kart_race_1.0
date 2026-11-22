@@ -1,0 +1,11 @@
+#ckr_vehicles:green_car/main_damage
+# ckr_vehicles:green_car/main_c调用
+
+scoreboard players operation inp int = temp_max int
+execute store result score res int run random value 400..600 ckr_mobs:damage_rand
+scoreboard players operation inp int /= res int
+
+data modify storage ckr_mobs:io input_uuid set from entity @s UUID
+execute positioned ~-0.6 ~-0.6 ~-0.6 as @e[dx=0,dy=0,dz=0,tag=ckr_mobs] \
+	positioned ~0.2 ~0.2 ~0.2 if entity @s[dx=0,dy=0,dz=0] \
+	run function ckr_mobs:generic/_damage_as

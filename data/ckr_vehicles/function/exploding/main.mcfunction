@@ -12,5 +12,6 @@ execute if score @s ckr_vehicle_explode_timer matches 1.. run return fail
 
 # 爆炸计时结束
 tag @s remove ckr_vehicle_exploding
+execute on passengers on passengers on passengers run tellraw @a [{"selector":"@s"},{"text":"的载具爆炸了"}]
 execute on passengers on passengers on passengers run effect clear @s minecraft:regeneration
 function ckr_vehicles:_full_hp_respawn

@@ -7,6 +7,7 @@ scoreboard players add global_sim_mod int 1
 # 手动添加要执行的tick函数
 execute as @e[tag=vve_tutor_blue_car] run function vve_tutor:blue_car/main_c
 execute as @e[tag=vve_tutor_nice_bike] run function vve_tutor:nice_bike/main_c
+execute as @e[tag=ckr_vehicles_green_car] run function ckr_vehicles:green_car/main_c
 
 # 回调tick函数
 execute if data storage vve:io tick_funcs[0] run function vve:simulator/_run_tick_funcs
