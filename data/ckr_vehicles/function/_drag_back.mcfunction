@@ -5,4 +5,4 @@
 scoreboard players operation tempid int = @s vve_id
 tag @e[tag=input] remove input
 execute as @a[tag=vp_gamer] if score @s ckr_vehicle_slot = tempid int run tag @s add input
-function vve_tutor:blue_car/_seat_on
+function ckr_vehicles:_seat_on

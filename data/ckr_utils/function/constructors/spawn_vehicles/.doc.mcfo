@@ -4,6 +4,7 @@
 _this:{
 	progress:<vp_progress,int>,
 	list_uuids:[storage ckr_utils:io list_uuids,ListVoid],
+	list_vehicle_modules:[storage ckr_utils:io list_vehicle_modules,ListVoid],
 	vehicles_cnt:<vehicles_cnt,int,1>,
 	range:{
 		<d,int,1>,

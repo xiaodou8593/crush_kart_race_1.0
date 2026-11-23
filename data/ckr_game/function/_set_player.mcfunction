@@ -13,9 +13,9 @@ function vp_core:player_space/_store
 
 # 骑乘自己的载具
 scoreboard players operation tempid int = @s ckr_vehicle_slot
-execute as @e[tag=vve_tutor_blue_car] if score @s vve_id = tempid int run tag @s add tmp
+execute as @e[tag=ckr_vehicle] if score @s vve_id = tempid int run tag @s add tmp
 tag @s add input
-execute as @e[tag=tmp,limit=1] run function vve_tutor:blue_car/_seat_on
+execute as @e[tag=tmp,limit=1] run function ckr_vehicles:_seat_on
 tag @e[tag=tmp] remove tmp
 
 # 获取bossbar并更新

@@ -83,8 +83,15 @@ execute store result score vec_z int run data get storage vp_core:io field_cente
 function ckr_utils:constructors/spawn_vehicles/_shift_vec
 function ckr_utils:constructors/spawn_vehicles/_model
 data modify storage ckr_utils:io input set from storage ckr_utils:io result
-execute as @a[tag=vp_joiner] run data modify storage ckr_utils:io input.list_uuids append from entity @s UUID
-execute store result storage ckr_utils:io input.vehicles_cnt int 1 run data get storage ckr_utils:io input.list_uuids
+execute as @a[tag=vp_joiner,sort=random] run data modify storage ckr_utils:io input.list_uuids append from entity @s UUID
+execute store result score loop int store result storage ckr_utils:io input.vehicles_cnt int 1 run data get storage ckr_utils:io input.list_uuids
+# 载具列表随机洗牌
+data modify storage math:io list set from storage ckr_game:class list_vehicle_modules
+execute store result score list_n int run data get storage math:io list
+scoreboard players set marker_pool_vol int 0
+function math:list/_shuffle
+# 转动添加到待生成列表
+execute if score loop int matches 1.. run function ckr_game:append_vehicle_module
 function ckr_utils:constructors/spawn_vehicles/_new
 
 # 生成iter_vehicles构造器

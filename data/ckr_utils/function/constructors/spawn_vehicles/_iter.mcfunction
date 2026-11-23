@@ -23,28 +23,14 @@ function math:uvw/_tovec_high
 
 function ckr_utils:constructors/spawn_vehicles/_push
 function ckr_utils:constructors/spawn_vehicles/_push
-# 根据list_uuids[0]投射车辆的数据模板
-data modify storage vve_tutor:io input set from storage vve_tutor:class blue_car_plate
-function vve_tutor:blue_car/_proj
-function ckr_utils:constructors/spawn_vehicles/_pop
-scoreboard players operation x int = vec_x int
-scoreboard players operation y int = vec_y int
-scoreboard players operation z int = vec_z int
-scoreboard players set angular_x int 0
-scoreboard players set angular_y int 0
-scoreboard players set angular_z int 0
-function vve:object/_set_angular
-# 构造新的车辆数据模板，生成车辆
-function vve_tutor:blue_car/_model
-data modify storage vve_tutor:io input set from storage vve_tutor:io result
-execute as @e[tag=math_marker,limit=1] run function ckr_utils:constructors/spawn_vehicles/iter_spawn
-tag @e[tag=result,limit=1] add vp_instance
-tag @e[tag=result,limit=1] add ckr_vehicle
+# 根据list_vehicle_modules[0]投射车辆的数据模板，生成车辆
+execute as @e[tag=math_marker,limit=1] run function ckr_utils:constructors/spawn_vehicles/spawn_a_vehicle with storage ckr_utils:io list_vehicle_modules[0]
 function ckr_utils:constructors/spawn_vehicles/_pop
 
 # 移除list_uuids[0]
 data modify entity 0-0-0-0-1 Thrower set from storage ckr_utils:io list_uuids[0]
 data remove storage ckr_utils:io list_uuids[0]
+data remove storage ckr_utils:io list_vehicle_modules[0]
 
 # 建立记分板指针
 execute as @e[tag=result,limit=1] run function vve:id/_pull

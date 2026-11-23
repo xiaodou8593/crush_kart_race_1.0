@@ -7,7 +7,7 @@
 function vve_tutor:simulator/main
 
 # 防止玩家下车
-execute as @e[tag=vve_tutor_blue_car,predicate=!ckr_vehicles:_player_on] run function ckr_vehicles:_drag_back
+execute as @e[tag=ckr_vehicle,tag=vp_instance,predicate=!ckr_vehicles:_player_on] run function ckr_vehicles:_drag_back
 
 # 游戏计时
 execute store result score temp_modular int run scoreboard players add game_timer int 1

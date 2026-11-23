@@ -4,6 +4,7 @@
 
 execute store result score vp_progress int run data get storage ckr_utils:io input.vp_progress
 data modify storage ckr_utils:io list_uuids set from storage ckr_utils:io input.list_uuids
+data modify storage ckr_utils:io list_vehicle_modules set from storage ckr_utils:io input.list_vehicle_modules
 execute store result score vehicles_cnt int run data get storage ckr_utils:io input.vehicles_cnt
 execute store result score d int run data get storage ckr_utils:io input.range[0]
 execute store result score l int run data get storage ckr_utils:io input.range[1]

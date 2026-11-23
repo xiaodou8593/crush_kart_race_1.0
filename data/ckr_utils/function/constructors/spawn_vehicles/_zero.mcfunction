@@ -3,6 +3,7 @@
 
 scoreboard players set vp_progress int 0
 data modify storage ckr_utils:io list_uuids set value []
+data modify storage ckr_utils:io list_vehicle_modules set value []
 scoreboard players set vehicles_cnt int 0
 scoreboard players set d int 0
 scoreboard players set l int 0
